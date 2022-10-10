@@ -1,0 +1,3 @@
+version=4
+https://download.gnome.org/sources/libgee/([\d\.]+[02468])/ \
+	libgee@ANY_VERSION@\.tar\.xz
