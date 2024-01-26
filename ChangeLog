@@ -1,3 +1,53 @@
+2022-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.20.6
+
+2022-09-17  Brendan Long  <self@brendanlong.com>
+
+	Keep the original exception in Future.map/flat_map
+	If a chain of maps fails, the final `exception` should be the actual
+	exception, not a semi-useless `FutureError.EXCEPTION`.
+
+	Fixes https://gitlab.gnome.org/GNOME/libgee/issues/23
+
+2022-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	 doap: Demote idle maintainers to authors
+
+2022-08-01  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Add more missing generic type arguments
+
+2022-04-04  Reuben Thomas  <rrt@sc3d.org>
+
+	Various English and typo fixes in the documentation
+
+2022-02-10  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.20.5
+
+2022-01-30  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Add more missing generic type arguments
+
+2021-11-30  Fabrice Fontaine  <fontaine.fabrice@gmail.com>
+
+	gee/Makefile.am: include Makefile.introspection
+	Include Makefile.introspection instead of using a custom rule which will
+	result in the following build failure when cross-compiling on buildroot
+	because of missing --includedir:
+
+	/home/giuliobenetti/autobuild/run/instance-1/output-1/host/bin/../riscv32-buildroot-linux-gnu/sysroot/usr/bin/g-ir-compiler -l `/usr/bin/sed -nE "s/^dlname='([A-Za-z0-9.+-]+)'/\1/p" libgee-0.8.la` -o Gee-0.8.typelib Gee-0.8.gir libgee-0.8.la
+	Could not find GIR file 'GObject-2.0.gir'; check XDG_DATA_DIRS or use --includedir
+	error parsing file Gee-0.8.gir: Failed to parse included gir GObject-2.0
+
+	Fixes:
+	 - http://autobuild.buildroot.org/results/884faa0f84c8dc43ed1ca6cde9caf21c731a4b35
+
+2021-10-15  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Add more missing generic type arguments
+
 2021-03-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.20.4
@@ -1708,3 +1758,14 @@
 
 	gee: Fix memory leak in HashMap.remove and HashSet.remove
 	Fixes bug 584440.
+
+2009-04-30  Jürg Billeter  <j@bitron.ch>
+
+	Update code using deprecated # modifier or operator
+
+	Fix build with Vala 0.7
+	Based on patch by Thijs Vermeir, fixes bug 579182.
+
+	Generate ChangeLog from git log
+	Add gitlog-to-changelog script from gnulib and a dist-hook to
+	generate ChangeLog file when creating tarballs.
