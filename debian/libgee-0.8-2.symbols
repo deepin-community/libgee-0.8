@@ -170,6 +170,7 @@ libgee-0.8.so.2 libgee-0.8-2 #MINVER#
  gee_functions_get_compare_func_for@Base 0.8.3
  gee_functions_get_equal_func_for@Base 0.8.3
  gee_functions_get_hash_func_for@Base 0.8.3
+ gee_future_error_get_type@Base 0.20.5
  gee_future_error_quark@Base 0.14.0
  gee_future_flat_map@Base 0.14.0
  gee_future_get_exception@Base 0.14.0

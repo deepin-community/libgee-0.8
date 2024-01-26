@@ -256,13 +256,13 @@ public class Gee.ConcurrentSet<G> : AbstractSortedSet<G> {
 	});
 
 	private class Iterator<G> : Object, Traversable<G>, Gee.Iterator<G> {
-		public Iterator (ConcurrentSet cset, Tower<G> head) {
+		public Iterator (ConcurrentSet<G> cset, Tower<G> head) {
 			_curr = head;
 			_set = cset;
 			assert (_curr != null);
 		}
 
-		public Iterator.point_at (ConcurrentSet cset, ref TowerIter<G> prev, Tower<G> curr) {
+		public Iterator.point_at (ConcurrentSet<G> cset, ref TowerIter<G> prev, Tower<G> curr) {
 			_curr = curr;
 			_set = cset;
 			_prev = prev;
@@ -1279,7 +1279,7 @@ public class Gee.ConcurrentSet<G> : AbstractSortedSet<G> {
 			return removed;
 		}
 
-		private static inline bool remove_level (CompareDataFunc<G>? cmp, ref Tower<G> prev, Tower<G> curr, uint8 level) {
+		private static inline bool remove_level<G> (CompareDataFunc<G>? cmp, ref Tower<G> prev, Tower<G> curr, uint8 level) {
 			bool status;
 			bool flagged = curr.try_flag (cmp, ref prev, out status, level);
 			if (status) {
